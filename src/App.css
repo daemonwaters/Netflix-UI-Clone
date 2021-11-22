@@ -1,38 +1,334 @@
-.App {
-  text-align: center;
+*{
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --bg-clr:#222222;
+  --logo-clr:#E50E14;
+  --btn-primary:#E50E14;
+  --get-start-btn:#F41012;
+  --card-clr:#303030;
+  --footer-txt:#6A6A6A;
+  --primary-size:50px;
+  --secondary-size:26px;
+  --small-size:16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background: var(--bg-clr);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper{
+  width: 100vw;
+}
+
+.hero-section{
+  width: 100%;
+  height: 100vh;
+  background: url('./pics/ES-en-20211017-popsignuptwoweeks-perspective_alpha_website_large.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 0.6rem;
+}
+
+.hero-section::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,rgba(0,0,0,0.4),rgba(0,0,0,0.79));
+  z-index:-1;
+} 
+
+.logo svg{
+  width: 134px;
+  height: 36px;
+  fill: var(--logo-clr);
+}
+
+.navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 3.4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.navbar button {
+  text-transform: capitalize;
+  font-size: var(--small-size);
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.lang-btn{
+  margin-right: 2rem;
+  padding: 0.3rem;
+  position: relative;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+  border: solid #fff 1px;
+  color: #fff;
+}
+
+.lang-btn svg{
+  width: 12px;
+}
+
+.sign-in-btn{
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius:4px;
+  background: var(--btn-primary);
+  color: #fff;
+}
+
+.navbar button:first-of-type svg{
+  margin:0 0.4rem;
+}
+
+.hero-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: max-content;
+  margin-top: 4rem;
+  z-index: 0;
+}
+
+.hero-content h1{
+  font-size: var(--primary-size);
+  font-family:600;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.hero-content p:first-of-type{
+  font-size: var(--secondary-size);
+  font-weight: 300;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.hero-content p:nth-of-type(2){
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.email-section{
+  width: 100%;
+  display: flex;
+}
+
+ .email-section input{
+  height: 100%;
+  width: 70%;
+  padding: 1.2rem;
+  outline: none;
+  border: solid 1px var(--footer-txt);
+}
+
+.email-section button{
+  width: 30%;
+  font-size: var(--secondary-size);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--get-start-btn);
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 300;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.row{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 405px;
+  padding: 0 4rem;
+  margin: 0.5rem 0;
+  background: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row > *{
+  flex-basis: 100%;
 }
+
+.row-text h1{
+  font-size: var(--primary-size);
+  padding: 0.4rem 0;
+  font-weight: 600;
+}
+
+.row-text p{
+  font-size: var(--secondary-size);
+  padding: 0.4rem 0;
+  font-weight: 300;
+}
+
+#r1{
+  background: url('./pics/tv-row1.png');
+  width: 100%;
+  height: 405px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#r2{
+  background: url('./pics/mobile-row2.jpeg');
+  width: 100%;
+  height:100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#r3{
+  background: url('./pics/device-row3.png');
+  width: 100%;
+  height:100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#r4{
+  background: url('./pics/kids-row4.png');
+  width: 100%;
+  height:100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reverse{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+  height: 405px;
+  padding: 0 4rem;
+  margin: 0.5rem 0;
+  background: #000;
+  color: #fff;
+}
+
+.reverse > *{
+  flex-basis: 50%;
+}
+
+.faq{
+  background: #000;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 2.2rem 0;
+}
+
+.faq h1{
+  font-size: var(--primary-size);
+  margin-bottom: 2rem;
+}
+
+.questions{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+.data{
+  background: var(--card-clr);
+  padding: 1.5rem 4rem;
+  font-size: var(--secondary-size);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+}
+
+data span{
+  font-size: var(--secondary-size);
+}
+.data:nth-child(6){
+  margin-bottom: 2rem;
+}
+.final-mail{
+  width: 100%;
+  margin: 0 auto;
+}
+
+footer{
+  width: 100%;
+  margin-top: 0.5rem;
+  color:var(--footer-txt);
+  background: #000;
+  padding:4rem 8rem 2rem 10rem;
+  text-align: left;
+}
+
+.cols{
+  display: flex;
+  justify-content:flex-start;
+  padding: 2rem 0;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-right: 6rem;
+}
+
+.col > * {
+  text-decoration: none;
+  color: var(--footer-txt);
+  text-transform: capitalize;
+  font-size: var(--small-size);
+  font-weight: 300;
+}
+
+footer button{
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  outline: none;
+  border: solid 1px var(--footer-txt);
+  background: transparent;
+  color:var(--footer-txt);
+  margin-bottom: 1.3rem;
+}
+
+footer button svg {
+  margin: 0 0.2rem;
+}
+
+.spn{
+  font-weight: 300;
+  font-size: var(--small-size);
+  text-transform: capitalize;
+}
+
+
